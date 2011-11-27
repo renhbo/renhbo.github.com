@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>d0gate的博客</title><link>/</link><description></description><atom:link href="//feeds/%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 27 Aug 2011 00:00:00 +0800</lastBuildDate><item><title>我的第一个中文程序</title><link>//2011/08/ChinesePython-ch01-my-first-Chinese-program.html</link><description>&lt;p&gt;打开编辑器，输入下面的内容:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+打印(&amp;quot;中文编程真有趣！&amp;quot;)
+&lt;/pre&gt;
+&lt;p&gt;注意: ()和&amp;quot;&amp;quot;都是半角，不是（）“”。&lt;/p&gt;
+&lt;p&gt;运行的结果是:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+中文编程真有趣！
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;打印( )&lt;/strong&gt; 是Python的关键字，把内容打印在屏幕上。这是一个函数，需要把打印的内容放在 &lt;strong&gt;( )&lt;/strong&gt;  里。 &lt;strong&gt;&amp;quot;中文编程真有趣！&amp;quot;&lt;/strong&gt; 是字符串，字符串用一对双引号&amp;quot;或者单引号'来表示，如&amp;quot;中文&amp;quot;和'中文'。用双引号或者单引号没有什么区别。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">d0gate</dc:creator><pubDate>Sat, 27 Aug 2011 00:00:00 +0800</pubDate></item><item><title>中文编程Python3和zhpy</title><link>//2011/08/ChinesePython-introduction.html</link><description>&lt;p&gt;中文编程一直是一个热门话题，也有很多种尝试，在 &lt;a class="reference external" href="http://www.python.org"&gt;Python&lt;/a&gt; 环境中， &lt;a class="reference external" href="http://abc.com"&gt;汉蟒&lt;/a&gt; 和 &lt;a class="reference external" href="http://code.google.com/p/zhpy"&gt;周蟒&lt;/a&gt; (zhpy)是致力于中文编程的软件。汉蟒是基于python2.3源代码修改，增加了中文关键字支持。周蟒通过解释程序预处理翻译关键字，更具有灵活性。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://www.python.org"&gt;Python3&lt;/a&gt; 改进了unicode的支持，并且允许中文作为变量和函数名称。由于这个特性，中文编程更容易实现了。 &lt;a class="reference external" href="http://code.google.com/p/zhpy"&gt;周蟒&lt;/a&gt; zhpy3是在 &lt;a class="reference external" href="http://www.python.org"&gt;Python3&lt;/a&gt; 的基础上的中文编程解释器。&lt;/p&gt;
+&lt;p&gt;本文将尝试使用中文编程来讲 &lt;a class="reference external" href="http://www.python.org"&gt;Python3&lt;/a&gt; 入门。由于本人水平有限，欢迎提出批评指正。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">d0gate</dc:creator><pubDate>Sat, 27 Aug 2011 00:00:00 +0800</pubDate></item></channel></rss>

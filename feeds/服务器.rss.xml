@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>d0gate的博客</title><link>/</link><description></description><atom:link href="//feeds/%E6%9C%8D%E5%8A%A1%E5%99%A8.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 16 Aug 2011 00:00:00 +0800</lastBuildDate><item><title>新购VPS基本检测步骤</title><link>//2011/08/vps-checklist.html</link><description>&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;VPS 性能检测&lt;/h2&gt;
+&lt;p&gt;当新够买一个VPS后，一般要检测机器的基本属性。本文以安装debian 6的VPS为例说明常用的步骤。&lt;/p&gt;
+&lt;blockquote&gt;
+注: debian和ubuntu相比需要的内存更少，在低端VPS上建议用debian.&lt;/blockquote&gt;
+&lt;p&gt;查看IP:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/sbin/ifconfig
+&lt;/pre&gt;
+&lt;p&gt;查看发行版:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+uname -a
+&lt;/pre&gt;
+&lt;p&gt;磁盘读写性能:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
+&lt;/pre&gt;
+&lt;!-- 被占用的端口号
+
+lsof -i --&gt;
+&lt;p&gt;以树状查看当前进程:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pstree
+&lt;/pre&gt;
+&lt;p&gt;查看某一个进程内存占用情况:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ps -C dropbear v
+&lt;/pre&gt;
+&lt;p&gt;查看内存占用:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+free
+&lt;/pre&gt;
+&lt;p&gt;更新为最快的发布源, 将默认的us改为离你最近的源:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+vi /etc/apt/sources.list
+&lt;/pre&gt;
+&lt;p&gt;去掉不用的包:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$su
+#dpkg -l
+#aptitude remove your_package
+&lt;/pre&gt;
+&lt;p&gt;更新系统:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#aptitude update
+#aptitude upgrade
+&lt;/pre&gt;
+&lt;p&gt;系统软件优化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;ssh-&amp;gt;dropbear:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+aptitude install dropbear
+vi /etc/default/dropbear
+NO_START=0 (设置成为自动启动)
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;bash -&amp;gt; pdksh:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+aptitude install pdksh
+使用chsh改变默认的shell(/bin/ppdksh)
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;添加用户:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#cat /etc/default/useradd
+#adduser abc
+&lt;/pre&gt;
+&lt;hr class="docutils" /&gt;
+&lt;p&gt;更多内容参见 &lt;a class="reference external" href="http://www.vpser.net/vps-howto"&gt;VPS新手指南&lt;/a&gt; 。&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">d0gate</dc:creator><pubDate>Tue, 16 Aug 2011 00:00:00 +0800</pubDate><category>vps</category></item></channel></rss>

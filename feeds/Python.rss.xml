@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>d0gate的博客</title><link>/</link><description></description><atom:link href="//feeds/Python.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 18 Aug 2011 12:20:00 +0800</lastBuildDate><item><title>Pelican静态博客使用指南</title><link>//2011/08/pelican-howto.html</link><description>&lt;div class="contents topic" id="id1"&gt;
+&lt;p class="topic-title first"&gt;目录&lt;/p&gt;
+&lt;ul class="auto-toc simple"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id2" id="id15"&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;Pelican简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id4" id="id16"&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;Pelican特点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id5" id="id17"&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;环境准备&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id6" id="id18"&gt;4&amp;nbsp;&amp;nbsp;&amp;nbsp;命令行下安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id7" id="id19"&gt;5&amp;nbsp;&amp;nbsp;&amp;nbsp;使用&lt;/a&gt;&lt;ul class="auto-toc"&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id8" id="id20"&gt;5.1&amp;nbsp;&amp;nbsp;&amp;nbsp;使用快捷向导建立博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id9" id="id21"&gt;5.2&amp;nbsp;&amp;nbsp;&amp;nbsp;生成页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#make" id="id22"&gt;5.3&amp;nbsp;&amp;nbsp;&amp;nbsp;使用make发布&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#pelican-conf-py" id="id23"&gt;5.4&amp;nbsp;&amp;nbsp;&amp;nbsp;修改配置文件 pelican.conf.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id10" id="id24"&gt;5.5&amp;nbsp;&amp;nbsp;&amp;nbsp;生成页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id11" id="id25"&gt;5.6&amp;nbsp;&amp;nbsp;&amp;nbsp;查看结果&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id12" id="id26"&gt;5.7&amp;nbsp;&amp;nbsp;&amp;nbsp;发布&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference internal" href="#id13" id="id27"&gt;6&amp;nbsp;&amp;nbsp;&amp;nbsp;项目资源&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id15"&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;Pelican简介&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.notmyidea.org/alexis/pelican/"&gt;Pelican&lt;/a&gt; 是一款博客软件，文章内容以纯文本格式写作，保存在本地，通过命令自动生成页面和索引文件。生成页面文件后在手工向Web服务器发布。&lt;/p&gt;
+&lt;p&gt;与著名的 &lt;a class="reference external" href="http://wordpress.com"&gt;Wordpress&lt;/a&gt; 不同，用户不需要安装 &lt;a class="reference external" href="http://mysql.com"&gt;mysql&lt;/a&gt; 数据库，不需要 &lt;a class="reference external" href="http://php.com"&gt;PHP&lt;/a&gt; ，是小内存VPS博客的首选。
+另一个好处是所有的文章都是静态页面，访问速度飞快。&lt;/p&gt;
+&lt;p&gt;Pelican的名字来源于法语Celipan，是笔记本的意思.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id16"&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;Pelican特点&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;一个博客软件&lt;/li&gt;
+&lt;li&gt;使用 &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;rst&lt;/a&gt; 或者 &lt;a class="reference external" href="http://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; 格式写作&lt;/li&gt;
+&lt;li&gt;集成外部的 &lt;a class="reference external" href="http://disqus.com"&gt;disqus&lt;/a&gt; 评论系统（可选）&lt;/li&gt;
+&lt;li&gt;支持主题，模板是jinja2&lt;/li&gt;
+&lt;li&gt;同一文章多语种发布&lt;/li&gt;
+&lt;li&gt;生成RSS/Atom订阅&lt;/li&gt;
+&lt;li&gt;导入wordpress/dotclear文章或者其他RSS格式&lt;/li&gt;
+&lt;li&gt;集成第三方工具twitter/google analytics（可选）&lt;/li&gt;
+&lt;li&gt;开放源码的 &lt;a class="reference external" href="http://python.org"&gt;Python&lt;/a&gt; 程序&lt;/li&gt;
+&lt;li&gt;支持Linux和Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id17"&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;环境准备&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Python2.7&lt;/li&gt;
+&lt;li&gt;Ubuntu Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id18"&gt;4&amp;nbsp;&amp;nbsp;&amp;nbsp;命令行下安装&lt;/a&gt;&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+$ sudo easy_install pelican
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id19"&gt;5&amp;nbsp;&amp;nbsp;&amp;nbsp;使用&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="section" id="id8"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id20"&gt;5.1&amp;nbsp;&amp;nbsp;&amp;nbsp;使用快捷向导建立博客&lt;/a&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ pelican-quickstart
+Welcome to pelican-quickstart v2.7.2.
+
+This script will help you creating a new Pelican based website.
+
+Please answer the following questions so this script can generate
+the files needed by Pelican.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id9"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id21"&gt;5.2&amp;nbsp;&amp;nbsp;&amp;nbsp;生成页面&lt;/a&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+pelican src -o output -s pelican.conf.py
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="make"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id22"&gt;5.3&amp;nbsp;&amp;nbsp;&amp;nbsp;使用make发布&lt;/a&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ make
+Makefile for a pelican Web site
+
+Usage:
+   make html                        (re)generate the web site #(重)生成站点内容
+   make clean                       remove the generated files #清空生成的文件。
+   ftp_upload                       upload the web site using FTP #通过FTP发布站点
+   ssh_upload                       upload the web site using SSH #通过SSH发布站点
+   dropbox_upload                   upload the web site using Dropbox #通过dropbox发布站点
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="pelican-conf-py"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id23"&gt;5.4&amp;nbsp;&amp;nbsp;&amp;nbsp;修改配置文件 pelican.conf.py&lt;/a&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ vi pelican.conf.py
+# static paths will be copied under the same name
+STATIC_PATHS = [&amp;quot;pictures&amp;quot;,]
+
+# A list of files to copy from the source to the destination
+FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
+
+
+WITH_PAGINATION = True
+DEFAULT_PAGINATION = 7
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id10"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id24"&gt;5.5&amp;nbsp;&amp;nbsp;&amp;nbsp;生成页面&lt;/a&gt;&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+$ make clean; make html
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id11"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id25"&gt;5.6&amp;nbsp;&amp;nbsp;&amp;nbsp;查看结果&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;生成的页面在output目录中。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+cd output
+python -m SimpleHTTPServer 8000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id12"&gt;
+&lt;h3&gt;&lt;a class="toc-backref" href="#id26"&gt;5.7&amp;nbsp;&amp;nbsp;&amp;nbsp;发布&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;页面发布可以通过FTP等工具上载到服务器页面。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id13"&gt;
+&lt;h2&gt;&lt;a class="toc-backref" href="#id27"&gt;6&amp;nbsp;&amp;nbsp;&amp;nbsp;项目资源&lt;/a&gt;&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;帮助文件 &lt;a class="reference external" href="http://docs.notmyidea.org/alexis/pelican/"&gt;pelican英文文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;最新代码 &lt;a class="reference external" href="https://github.com/ametaireau/pelican"&gt;https://github.com/ametaireau/pelican&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;更多模板 &lt;a class="reference external" href="https://github.com/ametaireau/pelican-themes"&gt;https://github.com/ametaireau/pelican-themes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">d0gate</dc:creator><pubDate>Thu, 18 Aug 2011 12:20:00 +0800</pubDate><category>python</category><category>博客软件</category></item><item><title>reStructured Text格式参考</title><link>//2011/08/restructuredtext-guide.html</link><description>&lt;p&gt;reStructured Text是一种文本标记规范，通过该规范，可以使用纯文本写做，并转换为html,Latex,pdf和epub等常见格式。
+该工具也是 &lt;a class="reference external" href="http://www.python.org"&gt;Python&lt;/a&gt; 软件的默认文档写作标准。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://sphinx.pocoo.org/rest.html"&gt;reStructuredText入门（英文）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html"&gt;快速格式参考（英文）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;rst格式规范（英文）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">d0gate</dc:creator><pubDate>Tue, 16 Aug 2011 15:19:00 +0800</pubDate><category>rst</category></item></channel></rss>

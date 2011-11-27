@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>d0gate的博客</title><link href="/" rel="alternate"></link><link href="//feeds/%E5%85%B3%E4%BA%8E.atom.xml" rel="self"></link><id>/</id><updated>2011-08-16T00:00:00+08:00</updated><entry><title></title><link href="//2011/08/aboutme.html" rel="alternate"></link><updated>2011-08-16T00:00:00+08:00</updated><author><name>d0gate</name></author><id>tag:2011,2011-08-16:/08/aboutme.html/</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;关于我&lt;/h2&gt;
+&lt;p&gt;我是一个程序员，爱好Python语言。&lt;/p&gt;
+&lt;p&gt;联系方式:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+d0gate |&amp;#64;| gmx |.| COM
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary><category term="aboutme"></category></entry></feed>
